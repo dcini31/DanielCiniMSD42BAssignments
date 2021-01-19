@@ -9,7 +9,7 @@ using UnityEngine.Scripting.APIUpdating;
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 15f;
-    [SerializeField] float health = 50;
+    [SerializeField] int health = 50;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
     [SerializeField] AudioClip oof;
@@ -32,6 +32,10 @@ public class Player : MonoBehaviour
         Move();       
     }
 
+    public int GetHealth()
+    {
+        return health;
+    }
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
         //accesses the damage from other object and reduces health accordingly
