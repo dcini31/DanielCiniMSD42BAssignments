@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 15f;
+    [SerializeField] float health = 50;
 
     float xMin, xMax;
     float padding = 0.5f;
@@ -22,6 +23,29 @@ public class Player : MonoBehaviour
         Move();       
     }
 
+    private void OnTriggerEnter2D(Collider2D otherObject)
+    {
+        //accesses the damage from other object and reduces health accordingly
+        DamageDealer dmg = otherObject.gameObject.GetComponent<DamageDealer>();
+
+        //if there is no dmgDealer in otherObject, the method ends
+        if (!dmg)
+        {
+            return;
+        }
+        Hit(dmg);
+    }
+
+    //when called sends the damage class details
+    private void Hit(DamageDealer dmg)
+    {
+        health -= dmg.GetDamage();
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     private float AddNumbers(float n1, float n2, float n3)
     {
         return n1 + n2;

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5930942299083240528
+--- !u!1 &7416623281186286711
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5930942299083240530}
-  - component: {fileID: 5930942299083240529}
-  m_Layer: 0
+  - component: {fileID: 2418521357764161397}
+  - component: {fileID: 7260946113592224638}
+  - component: {fileID: 782303277770525510}
+  - component: {fileID: -4534303144919509400}
+  - component: {fileID: 893367946650070800}
+  m_Layer: 9
   m_Name: Mini_van
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5930942299083240530
+--- !u!4 &2418521357764161397
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5930942299083240528}
+  m_GameObject: {fileID: 7416623281186286711}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 4, y: 6.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!212 &5930942299083240529
+--- !u!212 &7260946113592224638
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5930942299083240528}
+  m_GameObject: {fileID: 7416623281186286711}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +77,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 195e2b8ff4fa1a34a9a69e9186497775, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
@@ -82,3 +85,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &782303277770525510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416623281186286711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76ed92c7d03c904aaa2c501b7b95a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 757417494243218264, guid: a3a8a368041dd0046bbd09135af3baa8, type: 3}
+  - {fileID: 1185138264617314942, guid: fcf08b1af373fff4eaba6f774b823d7f, type: 3}
+  - {fileID: 8279834656803296441, guid: 9f31a5e4581b68149af2a39d3d2f7942, type: 3}
+  waveConfig: {fileID: 11400000, guid: f0740f66cad591d4690b5382965e6a8a, type: 2}
+--- !u!114 &-4534303144919509400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416623281186286711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f27c8105699bd749a9bbe7d348a45ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
+  shotCounter: 0
+  minTimeBetweenShots: 0.2
+  maxTimeBetweenShots: 3
+  LaserPrefab: {fileID: 0}
+  LaserSpeed: 0.3
+  deathVFX: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
+  explosionDuration: 1
+--- !u!60 &893367946650070800
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416623281186286711}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.39999998, y: 0.59999996}
+      - {x: 0.26999998, y: 0.96}
+      - {x: 0.14, y: 1.04}
+      - {x: -0.32999998, y: 1.04}
+      - {x: -0.52, y: 0.78999996}
+      - {x: -0.55, y: 0.63}
+      - {x: -0.55, y: 0.5}
+      - {x: -0.48999998, y: 0.48}
+      - {x: -0.48, y: -0.91999996}
+      - {x: -0.45999998, y: -0.94}
+      - {x: 0.31, y: -0.94}
+      - {x: 0.32999998, y: -0.91999996}
+      - {x: 0.32999998, y: 0.39}
+      - {x: 0.39999998, y: 0.47}
