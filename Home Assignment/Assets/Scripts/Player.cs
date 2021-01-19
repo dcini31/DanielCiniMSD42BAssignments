@@ -1,12 +1,21 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Scripting.APIUpdating;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 15f;
     [SerializeField] float health = 50;
+    [SerializeField] GameObject deathVFX;
+    [SerializeField] float explosionDuration = 1f;
+    [SerializeField] AudioClip oof;
+    [SerializeField] AudioClip hitmarker;
+    [SerializeField] [Range(0, 1)] float playerHurtVolume = 0.75f;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.15f;
 
     float xMin, xMax;
     float padding = 0.5f;
@@ -43,12 +52,22 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();           
         }
     }
-    private float AddNumbers(float n1, float n2, float n3)
+
+    private void Die()
     {
-        return n1 + n2;
+        Destroy(gameObject);
+        //instantiates explosion effect
+        GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+        AudioSource.PlayClipAtPoint(oof, Camera.main.transform.position, playerHurtVolume);
+
+        //destroyed after 1 sec
+        Destroy(explosion, explosionDuration);
+        //accesses Level Object and calls the Method GameOver()
+        FindObjectOfType<Level>().GameOver();
     }
 
     private void setUpMoveBounderies()

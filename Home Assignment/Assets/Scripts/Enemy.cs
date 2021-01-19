@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
 
@@ -13,7 +14,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] float LaserSpeed = 0.3f;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
-    
+    [SerializeField] AudioClip classic_hurt;
+    [SerializeField] AudioClip hitmarker;
+    [SerializeField] [Range(0, 1)] float enemyHurtVolume = 0.75f;
+    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
+    [SerializeField] int scoreValue = 5;
+
     //reduces health when enemy collides with gameObject
     private void OnTriggerEnter2D(Collider2D otherObject)
     {
@@ -38,8 +44,14 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
         //instantiates explosion effect
         GameObject explosion = Instantiate(deathVFX, transform.position, Quaternion.identity);
+
+        AudioSource.PlayClipAtPoint(classic_hurt , Camera.main.transform.position, enemyHurtVolume);
+
         //destroyed after 1 sec
         Destroy(explosion, explosionDuration);
+
+        //add scoreValue to GameSession Score
+        FindObjectOfType<GameSession>().AddToScore(scoreValue);
     }
 
     void Start()
@@ -72,5 +84,7 @@ public class Enemy : MonoBehaviour
         GameObject Laser = Instantiate(LaserPrefab, transform.position, Quaternion.identity) as GameObject;
 
         Laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -LaserSpeed);
+
+        AudioSource.PlayClipAtPoint(hitmarker, Camera.main.transform.position, shootSoundVolume);
     }
 }

@@ -97,7 +97,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
-  health: 50
+  health: 2
+  deathVFX: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
+  explosionDuration: 1
+  oof: {fileID: 8300000, guid: ababa4f68a0a9c249bb1915f3b066b70, type: 3}
+  hitmarker: {fileID: 8300000, guid: 2a958aa0dc06c05439b88e4355184a97, type: 3}
+  playerHurtVolume: 0.75
+  shootSoundVolume: 0.15
 --- !u!60 &-4480891425324607723
 PolygonCollider2D:
   m_ObjectHideFlags: 0
