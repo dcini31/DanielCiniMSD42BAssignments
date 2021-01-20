@@ -49,6 +49,8 @@ public class Player : MonoBehaviour
         Hit(dmg);
     }
 
+  
+
     //when called sends the damage class details
     private void Hit(DamageDealer dmg)
     {

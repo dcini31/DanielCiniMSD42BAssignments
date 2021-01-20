@@ -7,18 +7,10 @@ public class Enemy : MonoBehaviour
 {
 
     [SerializeField] float health = 1;
-    [SerializeField] float shotCounter;
-    [SerializeField] float minTimeBetweenShots = 0.2f;
-    [SerializeField] float maxTimeBetweenShots = 3f;
-    [SerializeField] GameObject LaserPrefab;
-    [SerializeField] float LaserSpeed = 0.3f;
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
-    [SerializeField] AudioClip classic_hurt;
-    [SerializeField] AudioClip hitmarker;
-    [SerializeField] [Range(0, 1)] float enemyHurtVolume = 0.75f;
-    [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
-    [SerializeField] int scoreValue = 5;
+    [SerializeField] AudioClip classic_hurt;    
+    [SerializeField] [Range(0, 1)] float enemyHurtVolume = 0.75f;    
 
     //reduces health when enemy collides with gameObject
     private void OnTriggerEnter2D(Collider2D otherObject)
@@ -49,42 +41,5 @@ public class Enemy : MonoBehaviour
 
         //destroyed after 1 sec
         Destroy(explosion, explosionDuration);
-
-        //add scoreValue to GameSession Score
-        FindObjectOfType<GameSession>().AddToScore(scoreValue);
-    }
-
-    void Start()
-    {
-        //random number generator for shots
-        shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
-    }
-
-    void Update()
-    {
-        CountDownAndShoot();
-    }
-
-    private void CountDownAndShoot()
-    {
-        //reduces amount of time to shoot per frame
-        shotCounter -= Time.deltaTime;
-
-        if(shotCounter <= 0f)
-        {
-            Fire();
-            //reset counter
-            shotCounter = Random.Range(minTimeBetweenShots, maxTimeBetweenShots);
-        }
-    }
-
-    private void Fire()
-    {
-        //spawns enemys laser
-        GameObject Laser = Instantiate(LaserPrefab, transform.position, Quaternion.identity) as GameObject;
-
-        Laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -LaserSpeed);
-
-        AudioSource.PlayClipAtPoint(hitmarker, Camera.main.transform.position, shootSoundVolume);
     }
 }

@@ -11,7 +11,7 @@ public class Score : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {       
         scoreText = GetComponent<Text>();
         gameSession = FindObjectOfType<GameSession>();
     }
@@ -20,5 +20,11 @@ public class Score : MonoBehaviour
     void Update()
     {
         scoreText.text = gameSession.GetScore().ToString();
+
+        if (gameSession.GetScore() >= 100)
+        {         
+            //accesses Level Object and calls the Method GameOver()
+            FindObjectOfType<Level>().Win();
+        }
     }
 }

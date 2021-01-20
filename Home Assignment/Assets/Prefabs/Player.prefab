@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 8778618807668857154}
   - component: {fileID: 8778618807668857157}
   - component: {fileID: 8778618807668857156}
+  - component: {fileID: 8588362358230283385}
   - component: {fileID: 8778618807668857159}
+  - component: {fileID: 5865647563332681736}
   m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
@@ -100,10 +102,23 @@ MonoBehaviour:
   health: 50
   deathVFX: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
   explosionDuration: 1
-  oof: {fileID: 8300000, guid: ababa4f68a0a9c249bb1915f3b066b70, type: 3}
+  oof: {fileID: 8300000, guid: ff0fae83ff40084499aea32ad91baf00, type: 3}
   hitmarker: {fileID: 8300000, guid: 2a958aa0dc06c05439b88e4355184a97, type: 3}
-  playerHurtVolume: 0.75
+  playerHurtVolume: 1
   shootSoundVolume: 0.15
+--- !u!114 &8588362358230283385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778618807668857158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf343a7879161f849b30d3490158651b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
 --- !u!60 &8778618807668857159
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +166,24 @@ PolygonCollider2D:
       - {x: 0.29, y: -1.09}
       - {x: 0.39, y: -1.01}
       - {x: 0.47, y: -0.84}
+--- !u!50 &5865647563332681736
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778618807668857158}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

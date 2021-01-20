@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -7106331084329186210}
   - component: {fileID: -5973748841684847375}
   - component: {fileID: -5187525797498003268}
+  - component: {fileID: -4688440736839745804}
   m_Layer: 9
   m_Name: Car
   m_TagString: Untagged
@@ -105,6 +106,7 @@ MonoBehaviour:
   - {fileID: 768691407894009357, guid: a2555135308be9045ab564b4a6ab497f, type: 3}
   - {fileID: 1360006575535586468, guid: 41b9100e9f3568844b9ce58eaffb91e0, type: 3}
   waveConfig: {fileID: 11400000, guid: b2ff1d0e353650e42b3d91b1896623cc, type: 2}
+  scoreValue: 5
 --- !u!114 &-2542965613113503854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,17 +120,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  shotCounter: 0
-  minTimeBetweenShots: 0.2
-  maxTimeBetweenShots: 3
-  LaserPrefab: {fileID: 1576974474280444905, guid: 9b1684a94b621a34fb02630062775d61, type: 3}
-  LaserSpeed: 6
   deathVFX: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
   explosionDuration: 1
   classic_hurt: {fileID: 8300000, guid: 4ed0a9c3bc766b2418de6a09be02eff2, type: 3}
-  hitmarker: {fileID: 8300000, guid: 2a958aa0dc06c05439b88e4355184a97, type: 3}
   enemyHurtVolume: 0.75
-  shootSoundVolume: 0.15
 --- !u!60 &-7106331084329186210
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -207,3 +202,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
+--- !u!114 &-4688440736839745804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383224142734357751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79219f9435dbe404db50425f6f18da48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotCounter: 0
+  minTimeBetweenShots: 0.05
+  maxTimeBetweenShots: 0.3
+  LaserPrefab: {fileID: 1576974474280444905, guid: 9b1684a94b621a34fb02630062775d61, type: 3}
+  LaserSpeed: 20
+  hitmarker: {fileID: 8300000, guid: ad32eece89a0dc34bb9ac2983a4e7c96, type: 3}
+  shootSoundVolume: 0.25

@@ -7,6 +7,14 @@ public class Level : MonoBehaviour
 {
     //Delays the game over scene 
     [SerializeField] float delaySeconds = 2f;
+    //Delays the win scene 
+    [SerializeField] float delaySecond = 1f;
+
+    IEnumerator WinningScreen()
+    {
+        yield return new WaitForSeconds(delaySecond);
+        SceneManager.LoadScene("WinScene");
+    }
 
     IEnumerator WaitAndLoad()
     {
@@ -23,12 +31,22 @@ public class Level : MonoBehaviour
         //loads 2DCarGame Scene
         SceneManager.LoadScene("2DCarGame");
         //reset GameSession
-        FindObjectOfType<GameSession>().ResetGame();
+        GameSession gs = FindObjectOfType<GameSession>();
+        if (gs != null)
+        {
+           gs.ResetGame();
+        }
     }
 
     public void GameOver()
     {
         StartCoroutine(WaitAndLoad());
+    }
+
+    public void Win()
+    {
+        print("Win method");
+        StartCoroutine(WinningScreen());
     }
 
     public void QuitGame()

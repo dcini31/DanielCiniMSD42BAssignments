@@ -17,4 +17,4 @@ MonoBehaviour:
   spawnInterval: 0.5
   spawnVariance: 0.3
   enemyCount: 1
-  enemyMoveSpeed: 2
+  enemyMoveSpeed: 5

@@ -7,6 +7,7 @@ public class EnemyPath : MonoBehaviour
 
     [SerializeField] List<Transform> waypoints;
     [SerializeField] waveConfig waveConfig;
+    [SerializeField] int scoreValue = 5;
 
     //saves the waypoint where it will go
     int pathIndex = 0;
@@ -24,7 +25,7 @@ public class EnemyPath : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        enemyMove();
+        enemyMove();        
     }
 
     private void enemyMove()
@@ -50,10 +51,14 @@ public class EnemyPath : MonoBehaviour
         }
         else //Destroy enemy once it reaches last point
         {
-            Destroy(gameObject);       
+            
+            //add scoreValue to GameSession Score
+            FindObjectOfType<GameSession>().AddToScore(scoreValue);
+            Destroy(gameObject);
+            
         }
     }
-
+    
     //wave config set up
     public void SetWaveConfig(waveConfig waveConfigToset)//this is set to public so it can be called from anywhere
     {

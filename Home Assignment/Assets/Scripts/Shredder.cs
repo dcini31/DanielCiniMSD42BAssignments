@@ -14,5 +14,4 @@ public class Shredder : MonoBehaviour
         //when laser hits shredder it will be destroyed
         Destroy(otherObject.gameObject);
     }
-
 }
