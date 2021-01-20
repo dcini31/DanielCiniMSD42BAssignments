@@ -17,14 +17,14 @@ public class Score : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         scoreText.text = gameSession.GetScore().ToString();
 
-        if (gameSession.GetScore() >= 100)
-        {         
-            //accesses Level Object and calls the Method GameOver()
-            FindObjectOfType<Level>().Win();
-        }
+            if (gameSession.GetScore() >= 100)
+            {         
+                //accesses Level Object and calls the Method GameOver()
+                FindObjectOfType<Level>().Win();
+            }
     }
 }

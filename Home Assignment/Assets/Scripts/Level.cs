@@ -45,7 +45,6 @@ public class Level : MonoBehaviour
 
     public void Win()
     {
-        print("Win method");
         StartCoroutine(WinningScreen());
     }
 
