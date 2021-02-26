@@ -8,7 +8,6 @@ public class laser : MonoBehaviour
     [SerializeField] GameObject deathVFX;
     [SerializeField] float explosionDuration = 1f;
     [SerializeField] AudioClip classic_hurt;
-    [SerializeField] AudioClip hitmarker;
     [SerializeField] [Range(0, 1)] float enemyHurtVolume = 0.75f;
     [SerializeField] [Range(0, 1)] float shootSoundVolume = 0.25f;
 

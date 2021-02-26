@@ -467,10 +467,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 2799433400227009514, guid: 8e880fe04eb28074aa63fa93ab349464, type: 3}
-      propertyPath: m_Name
-      value: Score
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e880fe04eb28074aa63fa93ab349464, type: 3}
 --- !u!1001 &3586114292358005493
@@ -1123,6 +1119,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8778618807668857156, guid: d22508273e62741458cc9039419d8d90, type: 3}
+      propertyPath: deathVFX
+      value: 
+      objectReference: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
     - target: {fileID: 8778618807668857158, guid: d22508273e62741458cc9039419d8d90, type: 3}
       propertyPath: m_Name
       value: Player

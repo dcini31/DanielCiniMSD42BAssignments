@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 5925511943361009531, guid: 013f4251d08bfbf43bd11a81b518e50f, type: 3}
   - {fileID: 1765171905735450194, guid: b8acae216f5391a4ea077114638abb63, type: 3}
   waveConfig: {fileID: 11400000, guid: 76795e33a9cec4e459dc42da8977ac0a, type: 2}
+  scoreValue: 5
 --- !u!114 &-4960433351583848694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,17 +119,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  shotCounter: 0
-  minTimeBetweenShots: 1
-  maxTimeBetweenShots: 3
-  LaserPrefab: {fileID: 0}
-  LaserSpeed: 0.3
   deathVFX: {fileID: 5222029545998578567, guid: 857e7435dcc08004bacaa52447a99bb5, type: 3}
   explosionDuration: 1
   classic_hurt: {fileID: 8300000, guid: 4ed0a9c3bc766b2418de6a09be02eff2, type: 3}
-  hitmarker: {fileID: 0}
   enemyHurtVolume: 0.75
-  shootSoundVolume: 0.25
 --- !u!60 &-6815820292344618543
 PolygonCollider2D:
   m_ObjectHideFlags: 0
